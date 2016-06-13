@@ -1,0 +1,33 @@
+<h1 align="center">{{title}}: {{person.personName}}</h1>
+
+<div align="right">
+    <label>Edit Politician Name: </label>
+    <input [(ngModel)]="person.personName" placeholder="name">
+</div>
+
+<h2>Reasons below...</h2>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2">
+            <ul class="reasons">
+                <li *ngFor="let curReason of reasonsListForUI" (click)="onSelect(curReason)">
+                    <span class="badge"> {{curReason.id}}</span> {{curReason.reasonName}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<h2>
+    <u>Reason Details!</u>
+</h2>
+<h3><i>{{selectedReason.reasonName}}</i></h3>
+
+<div><label>ID: </label> {{selectedReason.id}}</div>
+<div>
+    <label>Name: </label> {{selectedReason.reasonName}}
+</div>
+<div>
+    <label>Description: </label> {{selectedReason.desc}}
+</div>
