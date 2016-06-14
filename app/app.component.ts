@@ -48,7 +48,9 @@ var reasonArray: ReasonClass[] = [
     {
         "id": '11', "reasonName": "On Time", "desc": "Earlybird gets the worm. Get it done right, on time.", "skills": [
             "Seems natural enough",
-            "Ok, I admit - sleeping in once and a while on the couch is refreshing"
+            "I did this in one day, and I've never before built an angular 2 app from scratch",
+            "Ok, I admit - sleeping in once and a while on the couch is refreshing",
+            "The person I love live in Hawaii, and I am stuck in Ohio and Time to travel is key - something x-team can offer me"
         ]
     },
     {
