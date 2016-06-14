@@ -4,6 +4,7 @@ export class ReasonClass {
     id: string;
     reasonName: string;
     desc: string;
+    skills: string[];
 }
 
 export class PersonClass {
@@ -20,40 +21,76 @@ export class PersonClass {
 
 export class AppComponent {
 
-    title = 'Why should you';
+    title = 'Why should you hire';
 
     person: PersonClass = {
 
         id: 1,
-        personName: 'Politician A'
+        personName: 'Joseph Zapantis'
 
     };
-
     public reasonsListForUI = reasonArray;
 
     public selectedReason: ReasonClass;
 
-    constructor(){
+    constructor() {
         this.selectedReason = {
             'id': '',
             'reasonName': '',
-            'desc': ''
+            'desc': '',
+            'skills': []
         }
     }
-
     onSelect(reasonPassed: ReasonClass) { this.selectedReason = reasonPassed; }
-
-
 }
 
 var reasonArray: ReasonClass[] = [
-    { "id": '11', "reasonName": "On Time", "desc": "Earlybird gets the worm. Get it done right, on time."},
-    { "id": '12', "reasonName": "Fiscal Responsible", "desc": "Earlybird gets the worm. Get it done right, on time."},
-    { "id": '13', "reasonName": "Voting Record", "desc": "Earlybird gets the worm. Get it done right, on time."},
-    { "id": '14', "reasonName": "Bill A Success", "desc": "Earlybird gets the worm. Get it done right, on time."},
-    { "id": '15', "reasonName": "Loves People", "desc": "Earlybird gets the worm. Get it done right, on time."},
-    { "id": '16', "reasonName": "Value Oriented", "desc": "Earlybird gets the worm. Get it done right, on time."},
-    { "id": '17', "reasonName": "Proven Track Record", "desc": "Earlybird gets the worm. Get it done right, on time."},
-    { "id": '18', "reasonName": "Well Educated", "desc": "Earlybird gets the worm. Get it done right, on time."},
-    { "id": '19', "reasonName": "Successful Children", "desc": "Earlybird gets the worm. Get it done right, on time."}
+    {
+        "id": '11', "reasonName": "On Time", "desc": "Earlybird gets the worm. Get it done right, on time.", "skills": [
+            "Seems natural enough",
+            "Ok, I admit - sleeping in once and a while on the couch is refreshing"
+        ]
+    },
+    {
+        "id": '12', "reasonName": "Broad Technology Stack", "desc": "Exposed to cross platform development using a combination of client and open source tools.", "skills": [
+            "nodejs",
+            "R",
+            "css",
+            "html",
+            "javascript",
+            "IBM: Cognos (BI Studio & Framework Developer Certified)",
+            "IBM: Rational Performance Tester & SoapUI - Testing",
+            "IBM: BigInsights (Big Data Management)",
+            "IBM: Datastage (ETL)",
+            "NoSQL and RDBMS (DB2, Cloudant, MongoDB, DashDB)",
+            "IBM: Bluemix (WebHosting and Service Integration)",
+            "Salesforce app Developer Trained"
+
+        ]
+    },
+    {
+        "id": '13', "reasonName": "Business Oriented", 
+        "desc": "By going through business skill and becoming involved within my community I was able to learn the software software sides to a project.",
+        "skills": [
+            "Interpersonal team building and communication",
+            "Graduated having taken Business Honors Classes and Offered Honorary Membership",
+            "Experience writing analytical papers and building presentations for upper management ",
+            "Solid understanding finance logistics"
+        ]
+    },
+    {
+        "id": '14', "reasonName": "Horizontal != Vertical", 
+        "desc": "While I have experience in the financial, logistical, marketing and operational verticals, I am able to adapt to all kinds of different use cases.",
+        "skills": [
+            "Creative",
+            "Quick Learner",
+            "console.log()",
+            "Google [==========]"
+        ]
+    },
+    {
+        "id": 'X', "reasonName": "Reset", 
+        "desc": "",
+        "skills": []
+    }
 ];

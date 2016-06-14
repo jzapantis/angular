@@ -1,33 +1,54 @@
 <h1 align="center">{{title}}: {{person.personName}}</h1>
 
 <div align="right">
-    <label>Edit Politician Name: </label>
+    <label>Edit candidate name: </label>
     <input [(ngModel)]="person.personName" placeholder="name">
 </div>
 
-<h2>Reasons below...</h2>
+
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-2">
-            <ul class="reasons">
-                <li *ngFor="let curReason of reasonsListForUI" (click)="onSelect(curReason)">
-                    <span class="badge"> {{curReason.id}}</span> {{curReason.reasonName}}
-                </li>
-            </ul>
+    <div class="row" align="right">
+        <spa><a href="http://www.josephzapantis.com/">Website</a> | </spa>
+        <spa><a href="https://github.com/jzapantis/angular">Github</a> | </spa>
+        <spa><a href="https://www.linkedin.com/in/joseph-zapantis-78992b26">linkedIn | </a></spa>
+        <spa><a href="https://www.facebook.com/josephzapantis">Facebook</a></spa>
+    </div>
+    <div *ngIf='person.personName == "Joseph Zapantis" || person.personName == "x-team" || person.personName == "x team"'>
+        <h2>Reasons below...</h2>
+        <div class="row">
+            <div class="col-lg-2">
+                <ul class="reasons">
+                    <li *ngFor="let curReason of reasonsListForUI" (click)="onSelect(curReason)" [class.selected]="curReason === selectedReason">
+                        <span class="badge"> {{curReason.id}}</span> {{curReason.reasonName}}
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
+
 </div>
 
-<h2>
-    <u>Reason Details!</u>
-</h2>
-<h3><i>{{selectedReason.reasonName}}</i></h3>
+<div class="container-fluid" *ngIf='selectedReason.reasonName == "Horizontal != Vertical" || selectedReason.reasonName == "Business Oriented" || selectedReason.reasonName == "Broad Technology Stack" || selectedReason.reasonName == "On Time"'>
+    <div *ngIf='selectedReason.reasonName != "Reset"'>
 
-<div><label>ID: </label> {{selectedReason.id}}</div>
-<div>
-    <label>Name: </label> {{selectedReason.reasonName}}
-</div>
-<div>
-    <label>Description: </label> {{selectedReason.desc}}
+        <h3><i>{{selectedReason.reasonName}}</i> </h3>
+        <div><label>ID: </label> {{selectedReason.id}}</div>
+        <div>
+            <label>Name: </label> {{selectedReason.reasonName}}
+        </div>
+        <div>
+            <label>Description: </label> {{selectedReason.desc}}
+        </div>
+        <div class="row">
+            <div class="col-lg-6" align="right">
+                <ul class="reasons">
+                    <li *ngFor="let curReason of selectedReason.skills">
+                        <span class="badge"> {{curReason}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
 </div>
